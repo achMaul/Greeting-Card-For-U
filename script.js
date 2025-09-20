@@ -178,13 +178,23 @@ function showRandomImages() {
   container.appendChild(img);
   
   // ganti foto setiap 5 detik
+  let lastIndex = -1; // simpan index gambar terakhir
+
   imageInterval = setInterval(() => {
+    let newIndex;
+    // ulangi random sampai beda dari sebelumnya
+    do {
+      newIndex = Math.floor(Math.random() * imageList.length);
+    } while (newIndex === lastIndex);
+
+    lastIndex = newIndex; // update index terakhir
     img.style.opacity = 0;
     setTimeout(() => {
-      img.src = imageList[Math.floor(Math.random() * imageList.length)];
+      img.src = imageList[newIndex];
       img.style.opacity = 1;
     }, 500);
   }, 5000);
+
   
   page.style.display = "flex"; // tampilkan halaman random image
 }
@@ -204,3 +214,4 @@ function backToMain() {
   showSlide(currentSlide);
 
 }
+
