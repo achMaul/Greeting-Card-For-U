@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Greeting Card</title>
+</head>
+<body>
+  <header>
+    <h1 id="title">🎓 Happy Graduation 🎉</h1>
+    <h2 id="name"></h2>
+  </header>
+
+  <div class="card">
+    <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+    <p id="text"></p>
+    <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+
+  <div class="dots" id="dots"></div>
+  <button class="switch" onclick="switchMode()">Switch Mode</button>
+  <button class="random-img-btn" onclick="showRandomImages()">Random Image</button>
+
+  <script src="script.js"></script>
+
+  <div id="confetti"></div>
+
+<!-- Container untuk halaman Random Image -->
+<div id="random-image-page" style="display:none;">
+  <header>
+    <h2 id="random-text">
+      Oiyaa maaf yaa sebelumnya, ngaku deh, aku sempet ngambil beberapa foto kamu dari story 🙈 
+      Tapi bukan buat disebar kok... cuma buat disimpan, jangan marah ya hehehe ✌️, 
+      soalnya sayang aja kalau momen cakep gitu cuma 24 jam kalau kayak gini kan bisa dilihat berulang kali (✿◡‿◡)
+    </h2>
+  </header>
+
+  <div class="card">
+    <div id="random-images"></div>
+  </div>
+
+  <button onclick="backToMain()">Back</button>
+</div>
+
+</body>
+</html>
